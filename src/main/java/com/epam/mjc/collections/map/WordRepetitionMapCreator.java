@@ -6,11 +6,11 @@ import java.util.HashMap;
 
 public class WordRepetitionMapCreator {
     public Map<String, Integer> createWordRepetitionMap(String sentence) {
-        sentence.replaceAll("\\p{Punct}", "");
+        sentence.replaceAll("[!\"#$%&'()*+,-./:;<=>?@\\[\\]^_`{|}~]", "");
         Map <String, Integer> map = new HashMap <>();
         String [] words = sentence.split(" ");
         for (String word : words) {
-            word.toLowerCase();
+            word = word.toLowerCase();
             if (map.containsKey(word)) {
                 int temp = map.get(word);
                 map.put(word, ++temp);
