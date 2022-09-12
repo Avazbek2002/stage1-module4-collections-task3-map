@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class WordRepetitionMapCreator {
     public Map<String, Integer> createWordRepetitionMap(String sentence) {
-        sentence.replaceAll("[!\"#$%&'()*+,-./:;<=>?@\\[\\]^_`{|}~]", "");
+        sentence.replaceAll("[!#$%&'()*+,./:;<=>?@^_`~]", "");
         Map <String, Integer> map = new HashMap <>();
         String [] words = sentence.split(" ");
         for (String word : words) {
